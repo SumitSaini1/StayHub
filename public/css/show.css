@@ -1,0 +1,49 @@
+.plus-jakarta-sans-<uniquifier> {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+
+.show{
+    height: 100vh;
+}
+.show-img {
+    height: 42vh; 
+    padding: 0.3rem;
+    object-fit: cover
+
+    ;
+    border-radius: 1rem; 
+  }
+  .show-heading{
+    padding: 0.2rem;
+  }
+  
+  
+  
+  
+
+  .show-card-actions {
+    display: flex;
+    gap: 0.5rem; 
+    margin-top: 1rem;
+  } 
+  .card-body{
+    margin-left:1rem ;
+    margin-top:0.1rem ;
+    margin-bottom:1rem ;
+  }
+
+  #show-card {
+    
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+
+  #show-card:hover {
+    
+    transform: translateY(-5px); 
+    
+    
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; 
+  }

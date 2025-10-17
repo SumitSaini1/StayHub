@@ -1,0 +1,39 @@
+<% layout("layouts/boilerplatecode") -%>
+
+<body>
+  <div class="row" >
+    <div class=" col-8 offset-2">
+      <h2 style="color: #39B5A8;" class="show-heading">Listing Details</h2>
+
+      <div class="card rounded shadow-sm" id="show-card">
+        <img
+          src="<%= data.image.url %>"
+          class="card-img-top show-img"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%= data.title %></h5>
+          <p class="card-text"><%= data.description %></p>
+          <p class="card-text">
+            &#8377; <%= data.price.toLocaleString("en-IN") %>
+          </p>
+          <p class="card-text"><%= data.location %></p>
+          <p class="card-text"><%= data.country %></p>
+
+          <div class="show-card-actions">
+            <form action="/listening/<%= data._id %>/edit" method="GET">
+              <button class="btn btn-primary">Edit</button>
+            </form>
+
+            <form
+              action="/showList/<%= data._id %>?_method=DELETE"
+              method="Post"
+            >
+              <button class="btn btn-danger">Delete</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

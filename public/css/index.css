@@ -1,0 +1,70 @@
+
+.plus-jakarta-sans-<uniquifier> {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+  
+
+  .index-page .card {
+    border: none !important;
+    margin-bottom: 2rem;
+    width: 20rem !important;
+  }
+  
+  .index-page .card-img-top {
+    border-radius: 1rem !important;
+    width: 100%;
+    object-fit: cover !important;
+    height: 20rem !important;
+  }
+  
+  .index-page .card-body {
+    padding: 0px !important;
+  }
+  
+  .index-page .card-body p {
+    font-weight: 400 !important;
+  }
+  
+  .index-page .listing-link {
+    text-decoration: none;
+    color: #222;
+  }
+  
+  .index-page .listing-link:hover {
+    text-decoration: underline;
+  }
+  
+  .index-page .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.2s ease-in-out; 
+  }
+  
+  
+  
+  .show-page .show-img {
+    height: 39vh; 
+    padding: 0.3rem;
+    object-fit: cover; 
+  }
+  
+  .show-page .show-heading {
+    padding: 0.2rem;
+  }
+  
+  .show-page .show-card-actions {
+    display: flex;
+    gap: 0.5rem; 
+    margin-top: 1rem;
+  } 
+  
+  .show-page .card-body {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+  }
+  
+ 

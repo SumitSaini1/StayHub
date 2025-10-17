@@ -1,0 +1,62 @@
+<% layout("layouts/boilerplatecode") -%>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <form action="/showList/<%= data._id %>?_method=PUT" method="POST" class="col-8" id="edit-new">
+            <h2 style=" color: #39B5A8;" class="new-heading" class="edit-heading">Edit Listing</h2>
+
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" value="<%= data.title %>" name="listing[title]" class="form-control">
+            </div>
+           
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="listing[description]" id="" cols="30" rows="2"
+                    class="form-control"><%= data.description %></textarea>
+            </div>
+            
+
+            <div class="mb-3">
+                <label for="imageUrl" class="form-label">Image URL</label>
+                <input type="text" value="<%= data.image %>" name="listing[image]" class="form-control">
+                
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" value="<%= data.price %>" name="listing[price]" class="form-control">
+                </div>
+                
+
+                <div class="mb-3 col-md-4">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" value="<%= data.country %>" name="listing[country]" class="form-control">
+                </div>
+            </div>
+            
+
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" value="<%= data.location %>" name="listing[location]" class="form-control">
+            </div>
+            
+
+            <button type="submit" class="edit-btn">Submit</button>
+
+
+        </form>
+
+    </body>
+
+    </html>

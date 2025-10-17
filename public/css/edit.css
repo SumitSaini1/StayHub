@@ -1,0 +1,18 @@
+.plus-jakarta-sans-<uniquifier> {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+.edit-btn{
+    background-color:  #39B5A8;
+    border-radius: 10px;
+    color: white;
+}
+#edit-new{
+    margin-left: 15%;
+    color: #39B5A8;
+}
+.edit-heading{
+    margin-top: 3.5px;
+}
