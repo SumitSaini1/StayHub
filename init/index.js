@@ -1,13 +1,14 @@
 const mongoose=require("mongoose");
-const Listing = require("../models/listing");
-const  sampleListings = require("./data");
+const Review = require("../models/review");
+
+
 const { application } = require("express");
 
 async function connectDB() {
     try { 
       await mongoose.connect("mongodb://127.0.0.1:27017/StayHub");
       console.log("Connected to MongoDB successfully");
-      await iniData();
+      await initData();
     } catch (err) {
       console.error("MongoDB connection error:", err);
     }finally{
@@ -15,13 +16,29 @@ async function connectDB() {
     }
 }
 
-const iniData=async()=>{
+
+
+async function initData() {
+  try {
+    const inserted = await Review.create({
+      comment: "Great place to stay!",
+      rating: 5
+    });
+    console.log("✅ Data inserted:", inserted);
+  } catch (err) {
+    console.error("❌ Error inserting data:", err);
+  }
+}
+
+/*const iniData=async()=>{
     await Listing.deleteMany();
     const inserted =await Listing.insertMany(sampleListings);
     console.log("data is added",inserted);
     
     
-}
+}*/
+
+
 
 
 

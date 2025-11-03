@@ -7,23 +7,31 @@
             }
         </style>
 
-        <form action="/listening" method="POST" class="col-8" id="form-new">
-            <h2 style=" color: #39B5A8;" class="new-heading">Create New Listing</h2>
+        <form action="/listening" method="POST" class="col-8 needs-validation " novalidate id="form-new">
+            <h2 style=" color: #008080;" class="new-heading">Create New Listing</h2>
 
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" placeholder="Enter title" name="listing[title]" id="title" class="form-control">
+                <input type="text" placeholder="Enter title" name="listing[title]" id="title" class="form-control"
+                    required minlength="3">
+                <div class="invalid-feedback">
+                    Title should be valid.
+                </div>
             </div>
 
-            
+
 
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <textarea name="listing[description]" id="description" cols="30" rows="2"
-                    placeholder="Enter description" class="form-control"></textarea>
+                    placeholder="Enter description" class="form-control" required minlength="10"></textarea>
+
+                <div class="invalid-feedback">
+                    please enter the valid description.
+                </div>
             </div>
 
-            
+
 
             <div class="mb-3">
                 <label for="imageUrl" class="form-label">Image URL</label>
@@ -34,25 +42,36 @@
                     class="form-control">
             </div>
 
-            
+
             <div class="row">
                 <div class="mb-3 col-md-4">
                     <label for="price" class="form-label">Price</label>
-                    <input type="number" placeholder="Enter Price" name="listing[price]" id="price" class="form-control">
+                    <input type="number" placeholder="Enter Price" name="listing[price]" id="price" class="form-control"
+                        required min="1">
+                    <div class="invalid-feedback">
+                        Enter Valid Price.
+                    </div>
                 </div>
-            
+
                 <div class="mb-3 col-md-4">
                     <label for="country" class="form-label">Country</label>
-                    <input type="text" placeholder="Enter Country name" name="listing[country]" id="country" class="form-control">
+                    <input type="text" placeholder="Enter Country name" name="listing[country]" id="country"
+                        class="form-control" required minlength="2">
+                    <div class="invalid-feedback">
+                        Enter a Valid Country.
+                    </div>
                 </div>
             </div>
-            
-            
+
+
 
             <div class="mb-3">
                 <label for="location" class="form-label">Location</label>
                 <input type="text" placeholder="Enter location" name="listing[location]" id="location"
-                    class="form-control">
+                    class="form-control" required minlength="2">
+                <div class="invalid-feedback">
+                    Enter a Valid Location.
+                </div>
             </div>
 
 

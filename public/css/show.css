@@ -23,6 +23,7 @@
   
   
   
+  
 
   .show-card-actions {
     display: flex;
@@ -38,6 +39,7 @@
   #show-card {
     
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    margin-top: 8px;
   }
 
   #show-card:hover {

@@ -3,13 +3,17 @@
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
-  }
+}
 .new-heading{
     margin-top: 3.5px;
 }
 #form-new{
     margin-left: 15%;
-    color: #39B5A8;
+    
+    
 }
-
+.form-label {
+    color: #4A4A4A !important;
+    font-weight: 600 !important; /* slightly less bold, looks elegant */
+}
 
