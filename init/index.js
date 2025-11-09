@@ -18,7 +18,24 @@ async function connectDB() {
 
 
 
-async function initData() {
+
+
+const initData=async()=>{
+    await Listing.deleteMany();
+    const inserted =await Listing.insertMany(sampleListings);
+    console.log("data is added",inserted);
+    
+    
+}
+
+
+
+
+
+
+connectDB(); 
+
+/*async function initData() {
   try {
     const inserted = await Review.create({
       comment: "Great place to stay!",
@@ -28,19 +45,4 @@ async function initData() {
   } catch (err) {
     console.error("❌ Error inserting data:", err);
   }
-}
-
-/*const iniData=async()=>{
-    await Listing.deleteMany();
-    const inserted =await Listing.insertMany(sampleListings);
-    console.log("data is added",inserted);
-    
-    
 }*/
-
-
-
-
-
-
-connectDB(); 

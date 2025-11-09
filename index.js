@@ -150,10 +150,6 @@ app.post("/showList/:id/review", validateReview,wrapAsync(async (req, res) => {
     res.status(500).send("Something went wrong");
   }
 }));
-
-
-
-
 // review delete route
 app.delete("/showList/:id/review/:reviewId",(async(req,res)=>{
   let{id,reviewId}=req.params;
@@ -181,9 +177,9 @@ app.delete("/showList/:id/review/:reviewId",(async(req,res)=>{
 
 
 // middlewares
-app.use((err,req,res,next)=>{
+/*app.use((err,req,res,next)=>{
     res.send("Something went wrong");
-})
+})*/
 app.listen(port, () => {
   console.log("server is running");
 });

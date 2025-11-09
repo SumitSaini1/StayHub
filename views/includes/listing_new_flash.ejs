@@ -1,0 +1,21 @@
+<% if(messages && messages.length>0){ %>
+    <div class="alert alert-success " role="alert">
+        <%= messages %>
+    </div>
+
+<% } %> 
+
+
+<% if(error && error.length>0){ %>
+    <div class="alert alert-danger " role="alert">
+        <%= error %>
+    </div>
+
+<% } %> 
+
+<% if(deleted && deleted.length>0){ %>
+    <div class="alert alert-danger " role="alert">
+        <%= deleted %>
+    </div>
+
+<% } %>
