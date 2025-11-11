@@ -12,8 +12,15 @@ const { nextTick } = require("process");
 app.use(express.static(path.join(__dirname, "public")));
 const {review_schema}=require("./schema.js");
 
+// for sessions and connect flash 
 const session = require("express-session");
 const flash=require("connect-flash");
+
+// for authentication user 
+const passport=require("passport");
+const LocalStrategy=require("passport-local");
+const User=require("./models/user.js");
+
 
 
 const port = 3000;
@@ -26,8 +33,10 @@ app.engine("ejs", ejsMate);
 const ExpressError = require("./utils/ExpressError.js");
 const wrapAsync = require("./utils/wrapAsync.js");
 
+// Routes
 const listingsRouter = require("./routes/listings");
 const reviewsRouter = require("./routes/reviews");
+const userRouter = require("./routes/user.js");
 
 
 
@@ -73,6 +82,12 @@ const sessionoption={
 app.use(session(sessionoption));
 app.use(flash());
 
+// for passport 
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use((req,res,next)=>{
   res.locals.messages=req.flash("success");
@@ -84,10 +99,25 @@ app.use((req,res,next)=>{
 
 
 })
+app.get("/demouser",async(req,res)=>{
+  try{
+    let newfake=new User({
+      email:"ss@123",
+      username:"saini-ji"
+    })
+    let registerUser=await User.register(newfake,"hello");
+    console.log(registerUser);
+    res.send("register successfullt");
+  }catch(err){
+    console.log(err);
+    res.send("Error registering user");
+  }
+});
 
 
 app.use("/", listingsRouter);
 app.use("/showList/:id/review", reviewsRouter);
+app.use("/", userRouter);
   
 
 app.get('/favicon.ico', (req, res) => res.status(204).end());

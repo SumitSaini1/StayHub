@@ -1,0 +1,116 @@
+/
+body {
+    background-color: #f7faf8;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.035) 1px, transparent 1px);
+    background-size: 36px 36px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  /* center container vertically */
+  .vh-center {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  /* Card */
+  .stayhub-card {
+    width: 420px;
+    max-width: 92vw;
+    border-radius: 16px;
+    background: #fff;
+    padding: 34px;
+    box-shadow: 0 8px 20px rgba(16,24,40,0.06), 0 2px 4px rgba(16,24,40,0.04);
+    margin: 0 auto;
+  }
+  
+  /* Inputs: subtle border & radius */
+  .stayhub-card .form-control {
+    border: 1px solid #e6e9eb;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 14px;
+    background: #fff;
+    transition: box-shadow .15s, border-color .15s;
+  }
+  .stayhub-card .form-control:focus {
+    border-color: #9dd7c7;
+    box-shadow: 0 0 0 4px rgba(157,215,199,0.12);
+  }
+  
+  /* labels and small text */
+  label.form-label { font-size: 13px; color:#374151; margin-bottom:6px; }
+  .muted { color:#9ca3af; font-size: 13px; }
+  
+  /* peach sign-up button */
+  .peach-btn {
+    background: linear-gradient(180deg,#ffbba8 0%,#f8a98a 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(249,159,126,0.18);
+    width: 100%;
+  }
+  
+  /* Suggest label next to password */
+  .suggest {
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#b98163;
+    font-weight:500;
+    font-size:13px;
+  }
+  
+  /* logo/title styles */
+  .logo-title h1 { margin:0; font-weight:800; letter-spacing:-0.4px; }
+  .logo-title .stay { color:#008f88; }
+  .logo-title .hub  { color:#ff7a44; }
+  
+  /* small link */
+  .small-link { color:#0ea5a1; font-weight:600; text-decoration:none; }
+  .small-link:hover { text-decoration:underline; }
+  
+  /* make cards slightly smaller on very small screens */
+  @media (max-width: 480px) {
+    .stayhub-card { padding: 22px; width: 94vw; }
+    .peach-btn { padding: 10px 14px; }
+  }
+  
+  /* logo styling */
+.stayhub-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 6px;
+  }
+  
+/* Card (Original) */
+.stayhub-card {
+  width: 420px;
+  max-width: 92vw;
+  border-radius: 16px;
+  background: #fff;
+  padding: 34px;
+  /* Original Shadow */
+  box-shadow: 0 8px 20px rgba(16,24,40,0.06), 0 2px 4px rgba(16,24,40,0.04);
+  margin: 0 auto;
+  
+  /* ADDED: Smooth transition for the effect */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* ADDED: Hover Effect */
+.stayhub-card:hover {
+  /* Lifts the card slightly up */
+  transform: translateY(-4px); 
+  
+  /* Enhances the shadow for a lifted look */
+  box-shadow: 0 16px 30px rgba(16,24,40,0.1), 0 4px 8px rgba(16,24,40,0.06); 
+}

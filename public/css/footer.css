@@ -1,19 +1,58 @@
-.plus-jakarta-sans-<uniquifier> {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-  }
-#footer{
-    margin-top: 10px;
+#footer {
+    margin-top: auto; /* crucial: lets flexbox push footer to bottom when content is short */
     background-color: #008080 !important;
-    
-    
-    
-}
-#footer-container{
-    color: white !important;
-}
-#social-media{
-    color: white !important;
-}
+    color: #ffffff !important;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  
+  
+  #footer-container,
+  #footer-container a,
+  #footer-container p,
+  #footer-container li,
+  #footer-container h5 {
+    color: #ffffff !important;
+  }
+  
+  #footer-container a {
+    text-decoration: none !important;
+    opacity: 0.95;
+  }
+  
+  #footer-container a:hover,
+  #footer-container a:focus {
+    text-decoration: underline !important;
+    opacity: 1;
+  }
+  
+  #social-media a {
+    display: inline-block;
+    margin-right: 0.5rem;
+    color: #ffffff !important;
+    text-decoration: none !important;
+  }
+  
+  #footer hr {
+    border-color: rgba(255, 255, 255, 0.25);
+    margin: 1rem 0;
+  }
+  
+  #footer .text-center {
+    padding-bottom: 0.75rem;
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-size: 0.95rem;
+  }
+  
+  @media (max-width: 575.98px) {
+    #footer .col-md-4 {
+      margin-bottom: 1rem;
+    }
+    #social-media a {
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+  }
