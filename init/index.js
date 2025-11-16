@@ -1,39 +1,42 @@
-const mongoose=require("mongoose");
+const mongoose = require("mongoose");
 const Review = require("../models/review");
-
+const Listing = require("../models/listing");
+const initListingData = require("./data");
 
 const { application } = require("express");
 
 async function connectDB() {
-    try { 
-      await mongoose.connect("mongodb://127.0.0.1:27017/StayHub");
-      console.log("Connected to MongoDB successfully");
-      await initData();
-    } catch (err) {
-      console.error("MongoDB connection error:", err);
-    }finally{
-        mongoose.connection.close();
-    }
+  try {
+    await mongoose.connect("mongodb://127.0.0.1:27017/StayHub");
+    console.log("Connected to MongoDB successfully");
+    await initData();
+  } catch (err) {
+    console.error("MongoDB connection error:", err);
+  } finally {
+    mongoose.connection.close();
+  }
 }
 
-
-
-
-
-const initData=async()=>{
+const initData = async () => {
+  try {
     await Listing.deleteMany();
-    const inserted =await Listing.insertMany(sampleListings);
-    console.log("data is added",inserted);
     
-    
-}
 
 
+    const sampleListings = initListingData.data.map((obj) => ({
+      ...obj,
+      owner: "6916c7303540ada3b10bcff0",
+    }));
 
+    const inserted = await Listing.insertMany(sampleListings); // for making owner 
 
+    console.log("Data is added:", inserted);
+  } catch (err) {
+    console.error("Error seeding data:", err);
+  }
+};
 
-
-connectDB(); 
+connectDB();
 
 /*async function initData() {
   try {

@@ -23,6 +23,8 @@ const User=require("./models/user.js");
 
 
 
+
+
 const port = 3000;
 
 app.set("views", path.join(__dirname, "views"));
@@ -93,6 +95,7 @@ app.use((req,res,next)=>{
   res.locals.messages=req.flash("success");
   res.locals.error=req.flash("error");
   res.locals.deleted=req.flash("deleted");
+  res.locals.currUser=req.user;
   
   next();
   
