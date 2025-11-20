@@ -6,3 +6,7 @@
 /n
 // step 4 Authentication login/signup done 
 // step 5 Connecting Login Routes/ Authorization for listings and Reviews/Owners /Authors 
+
+
+// step 6 project phase 3 a add styling in pages and use MVC 
+

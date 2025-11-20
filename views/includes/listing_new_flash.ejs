@@ -1,21 +1,25 @@
-<% if(messages && messages.length>0){ %>
-    <div class="alert alert-success " role="alert">
-        <%= messages %>
+<div class="flash-wrapper mt-2">
+    <div class="container" style="max-width:600px; padding:0;">
+        <% if (messages && messages.length> 0) { %>
+            <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
+                <%= messages %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>
+                <% if (error && error.length> 0) { %>
+                    <div class="alert alert-danger alert-dismissible fade show shadow-sm" role="alert">
+                        <%= error %>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <% } %>
+                        <% if (deleted && deleted.length> 0) { %>
+                            <div class="alert alert-warning alert-dismissible fade show shadow-sm" role="alert">
+                                <%= deleted %>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                            </div>
+                            <% } %>
+                            
     </div>
+</div>
 
-<% } %> 
-
-
-<% if(error && error.length>0){ %>
-    <div class="alert alert-danger " role="alert">
-        <%= error %>
-    </div>
-
-<% } %> 
-
-<% if(deleted && deleted.length>0){ %>
-    <div class="alert alert-danger " role="alert">
-        <%= deleted %>
-    </div>
-
-<% } %>

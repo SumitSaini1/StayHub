@@ -1,5 +1,11 @@
+if(process.env.NODE_ENV != "production"){
+  require("dotenv").config();
+}
+
+
 const express = require("express");
 const app = express();
+
 const mongoose = require("mongoose");
 const ejs = require("ejs");
 const Listing = require("./models/listing");
@@ -14,6 +20,7 @@ const {review_schema}=require("./schema.js");
 
 // for sessions and connect flash 
 const session = require("express-session");
+
 const flash=require("connect-flash");
 
 // for authentication user 
@@ -81,6 +88,8 @@ const sessionoption={
   },
 }; 
 
+
+
 app.use(session(sessionoption));
 app.use(flash());
 
@@ -101,7 +110,9 @@ app.use((req,res,next)=>{
   
 
 
-})
+});
+
+
 app.get("/demouser",async(req,res)=>{
   try{
     let newfake=new User({
@@ -118,6 +129,7 @@ app.get("/demouser",async(req,res)=>{
 });
 
 
+
 app.use("/", listingsRouter);
 app.use("/showList/:id/review", reviewsRouter);
 app.use("/", userRouter);
@@ -129,6 +141,9 @@ app.get('/favicon.ico', (req, res) => res.status(204).end());
 /*app.use((err,req,res,next)=>{
     res.send("Something went wrong");
 })*/
+
+
 app.listen(port, () => {
   console.log("server is running");
 });
+
