@@ -16,10 +16,10 @@
 }
 
 .navbar-brand img {
-    height: 40px;        /* Fixed height */
+    height: 45px;        /* Fixed height */
     width: auto;
     object-fit: contain;
-    margin: 0;           /* REMOVED manual margins to let Flexbox center it */
+    margin-top: 0.3rem;           /* REMOVED manual margins to let Flexbox center it */
     display: block;
 }
 
