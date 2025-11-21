@@ -20,6 +20,9 @@ const upload = multer({
 
 //const isLogedIn = require('../Middleware/check_loged_in');
 // Show all listings
+router.get("/", (req, res) => {
+  res.redirect("/listening");
+});
 router.get(
   "/listening",
   wrapAsync(listingControler.index)
