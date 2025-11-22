@@ -2,7 +2,7 @@
     
 
     <body>
-        <form action="/showList/<%= data._id %>?_method=PUT" method="POST" class="col-8 needs-validation" novalidate id="edit-new">
+        <form action="/showList/<%= data._id %>?_method=PUT" method="POST" class="col-8 needs-validation" novalidate id="edit-new" enctype="multipart/form-data">
             <h2 style=" color: #008080;" class="new-heading" class="edit-heading">Edit Listing</h2>
 
 
@@ -25,13 +25,30 @@
             </div>
             
 
-            <div class="mb-3">
+          <!--  <div class="mb-3">
                 <label for="imageUrl" class="form-label">Image URL</label>
                 <input type="text" value="<%= data.image.url %>" name="listing[image][url]" class="form-control" placeholder="Enter Image URL" required>
                 <br>
                 <input type="text" value="<%= data.image.filename %>" name="listing[image][filename]" class="form-control" placeholder="Enter filename (optional)" >
                 
+            </div> -->
+            <div class="mb-3">
+                <label for="image" class="form-label d-block">Original image</label>
+                
+                <img src="<%= data.image.url %>" 
+                     alt="original_image" 
+                     class="img-thumbnail" 
+                     style="height:150px; width:auto;">
             </div>
+            
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload new image </label>
+                <input type="file"  name="listing[image]" class="form-control" placeholder="upload image" >
+                <br>
+                
+                
+            </div> 
+
 
             
 

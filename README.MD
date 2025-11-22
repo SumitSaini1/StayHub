@@ -12,3 +12,4 @@
 
 //step 7 final push deployed 
 
+step 8: Add new feature to upload image and store on Cloudinary External cloud;

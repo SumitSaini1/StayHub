@@ -9,12 +9,9 @@ const listingControler=require("../controler/listing");
 
 const multer = require("multer");
 const { storage } = require("../cloudConfig");
-//const upload = multer({ storage });
+const upload = multer({ storage });
 
-const upload = multer({
-  storage,
-  limits: { fileSize: 5 * 1024 * 1024 } // 5 MB max
-});
+
 
 
 
@@ -23,6 +20,22 @@ const upload = multer({
 router.get("/", (req, res) => {
   res.redirect("/listening");
 });
+router.get("/upload",(req,res)=>{
+  res.render("cloudinary");
+})
+router.post("/upload",upload.single("image"),(req,res)=>{
+  console.log("uploaded image URL:",req.file.path);
+  res.json({
+    success:true,
+    url:req.file.path
+  });
+})
+
+
+
+
+
+
 router.get(
   "/listening",
   wrapAsync(listingControler.index)
@@ -39,9 +52,18 @@ router.get("/listening/new", isLogedIn,listingControler.createNew );
 
 // Create new listing
 router.post(
-  "/listening",
+  "/listening",upload.single("listing[image]"),
   wrapAsync(listingControler.postListing)
 );
+
+
+/*router.post("/listening",upload.single("listing[image]"),wrapAsync(async(req,res)=>{
+  console.log("uploaded image URL:",req.file.path);
+  res.json({
+    success:true,
+    url:req.file.path
+  });
+}))*/
 
 
 
@@ -55,7 +77,7 @@ router.get(
 // Update listing
 router.put(
   "/showList/:id",
-  isLogedIn,isowner,
+  isLogedIn,isowner,upload.single("listing[image]"),
   wrapAsync(listingControler.listingEditPostform)
 );
 

@@ -7,7 +7,7 @@
             }
         </style>
 
-        <form action="/listening" method="POST" class="col-8 needs-validation "   id="form-new" >
+        <form action="/listening" method="POST" class="col-8 needs-validation "   id="form-new" enctype="multipart/form-data">
             <h2 style=" color: #008080;" class="new-heading">Create New Listing</h2>
 
             <div class="mb-3">
@@ -33,14 +33,24 @@
 
 
 
-            <div class="mb-3">
+            <!-- <div class="mb-3">
                 <label for="imageUrl" class="form-label">Image URL</label>
                 <input type="text" placeholder="Enter Image URL" name="listing[image][url]" id="imageUrl"
                     class="form-control">
                 <br>
                 <input type="text" placeholder="Enter filename (optional)" name="listing[image][filename]"
                     class="form-control">
-            </div> 
+            </div>  -->
+
+            <div class="mb-3">
+                <label for="imageUrl" class="form-label">Image URL</label>
+                <input type="file" placeholder="Upload file" name="listing[image]" id="image"
+                    class="form-control">
+                <br>
+
+            </div>
+
+
 
            
 
