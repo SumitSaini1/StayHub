@@ -1,8 +1,26 @@
 const Listing = require("../models/listing");
 
 module.exports.index = async (req, res) => {
-  const data = await Listing.find({});
-  res.render("index", { data });
+  let {category}=req.query;
+  if(category){
+    const data = await Listing.find({category:category});
+    if(data.length===0){
+      req.flash("error","No Listing Found");
+      
+      return res.redirect("/");
+
+    }
+    res.render("index", { data });
+    return;
+
+  }else{
+    const data = await Listing.find({});
+    res.render("index", { data });
+    return;
+
+  }
+  
+  
 };
 
 module.exports.showList = async (req, res) => {

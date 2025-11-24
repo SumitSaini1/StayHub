@@ -31,6 +31,29 @@
                 </div>
             </div>
 
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select name="listing[category]" id="category" class="form-control">
+                    <option value="" disabled selected>Select a Category</option>
+                    <option value="hotel">hotel</option>
+                    <option value="villa">villa</option>
+                    <option value="resort">Resort</option>
+                    <option value="Appartment" >Appartment</option>
+                    <option value="mountain city" >Mountain city</option>
+                    <option value="desert" >Desert</option>
+                    <option value="island" >Island</option>
+                    <option value="farmshouse">farmshouse</option>
+                    <option value="farm">farm</option>
+                </select>
+                
+
+                <div class="invalid-feedback">
+                    please enter the valid description.
+                </div>
+            </div>
+
+
+
 
 
             <!-- <div class="mb-3">
@@ -41,6 +64,8 @@
                 <input type="text" placeholder="Enter filename (optional)" name="listing[image][filename]"
                     class="form-control">
             </div>  -->
+            
+
 
             <div class="mb-3">
                 <label for="imageUrl" class="form-label">Image URL</label>

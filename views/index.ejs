@@ -38,60 +38,80 @@
 
   <body>
     <div id="filters">
+      
       <div class="filter">
-        <div><i class="fa-solid fa-fire"></i></div>
-        <p>Trending</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-solid fa-bed"></i></div>
-        <p>Rooms</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-solid fa-city"></i></div>
-        <p>cities</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-solid fa-mountain-city"></i></div>
-        <p>Mountains City</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-solid fa-landmark
-        "></i></div>
-        <p>Mountains City</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fas fa-swimming-pool"></i></div>
-        <p>swimming-pool</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-solid fa-sun"></i></div>
-        <p>Desert</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-solid fa-ship"></i></div>
-        <p>Island</p>
-      </div>
-
-      <div class="filter">
-        <div><i class="fa-solid fa-ship"></i></div>
-        <p>Desert</p>
+        <a href="/"><div><i class="fa-solid fa-list"></i>
+        </div>
+        <p>Home</p></a>
+        
       </div>
 
 
+      <div class="filter">
+        <a href="/listening?category=hotel"><div><i class="fa-solid fa-hotel"></i>
+        </div>
+        <p>Hotel</p></a>
+        
+      </div>
+
+      <div class="filter">
+        <a href="/listening?category=villa"><div><i class="fa-solid fa-house"></i>
+
+        </div>
+        <p>Villa</p></a>
+        
+      </div>
+
+      <div class="filter">
+        <a href="/listening?category=resort"><div><i class="fa-solid fa-hotel"></i>
+        </div>
+        <p>Resort</p></a>
+        
+      </div>
+
+      <div class="filter">
+        <a href="/listening?category=mountain city"><div><i class="fa-solid fa-mountain-city"></i></div>
+          <p>Mountains City</p></a>
+        
+      </div>
+
+      <div class="filter">
+        <a href="/listening?category=Appartment"><div><i class="fa-solid fa-building"></i>
+
+        </div>
+        <p>Appartment</p></a>
+        
+      </div>
+
+      <div class="filter">
+        <a href="/listening?category=farmshouse"><div><i class="fas fa-swimming-pool"></i></div>
+          <p>FarmHouse</p></a>
+        
+      </div>
+
+      <div class="filter">
+        <a href="/listening?category=desert"><div><i class="fa-solid fa-sun"></i></div>
+          <p>Desert</p></a>
+        
+      </div>
+
+      <div class="filter">
+        <a href="/listening?category=island"><div><i class="fa-solid fa-ship"></i></div>
+          <p>Island</p></a>
+        
+      </div>
+
+     
+
+
 
 
 
       <div class="filter">
-        <div><i class="fa-solid fa-tractor
-        "></i></div>
-        <p>Farms</p>
+        <a href="/listening?category=farm"><div><i class="fa-solid fa-tractor
+          "></i></div>
+          <p>Farms</p></a>
+        
       </div>
 
 
@@ -131,7 +151,9 @@
                     <b>
                       <%= info.title %>
                     </b>
-                  </a>
+                  </a><br>
+                  <span>Category: <%= info.category || "No category" %></span>
+
                   <br>
                   &#8377; <%= info.price %> / night
                     <i class="tax-info">&nbsp;&nbsp;+18% GST</i>

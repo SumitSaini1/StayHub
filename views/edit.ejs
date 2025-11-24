@@ -23,6 +23,31 @@
                         please enter the valid description.
                     </div>
             </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select name="listing[category]" id="category" class="form-control">
+                    
+                   
+                    <option value="" disabled <%= !data.category ? "selected" : "" %>>
+                        Select a Category
+                    </option>
+            
+                    <option value="hotel" <%= data.category === "hotel" ? "selected" : "" %>>Hotel</option>
+                    <option value="villa" <%= data.category === "villa" ? "selected" : "" %>>Villa</option>
+                    <option value="resort" <%= data.category === "resort" ? "selected" : "" %>>Resort</option>
+                    <option value="Appartment" <%= data.category === "Appartment" ? "selected" : "" %>>Appartment</option>
+                    <option value="mountain city" <%= data.category === "mountain city" ? "selected" : "" %>>Mountain city</option>
+                    <option value="desert" <%= data.category === "desert" ? "selected" : "" %>>Desert</option>
+                    <option value="island" <%= data.category === "island" ? "selected" : "" %>>Island</option>
+                    <option value="farmshouse" <%= data.category === "farmshouse" ? "selected" : "" %>>Farmshouse</option>
+                    <option value="farm" <%= data.category === "farm" ? "selected" : "" %>>Farm</option>
+                </select>
+            
+                <div class="invalid-feedback">Please select a valid category.</div>
+            </div>
+            
+
+            
             
 
           <!--  <div class="mb-3">

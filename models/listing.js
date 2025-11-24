@@ -39,7 +39,13 @@ const listingSchema=new mongoose.Schema({
     owner:{
         type: mongoose.Schema.Types.ObjectId,
         ref:"User"
+    },
+    category:{
+        type:String,
+        required:true
+
     }
+   
       
 
     
