@@ -4,6 +4,8 @@ StayHub is a full-stack hotel and property listing platform built using Node.js,
 Users can browse available stays, filter by categories, view details, and authenticated users can create, update, and delete listings.  
 This project follows MVC architecture with authentication, file uploads, routing, and middleware — suitable as an Project.
 
+Live Link : https://stayhub-62jb.onrender.com
+
 ---
 
 ## Features
